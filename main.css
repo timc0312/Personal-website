@@ -5,6 +5,14 @@ html {
   font-size: 16px;
 }
 
+body {
+  margin: 0;
+}
+
+main {
+  margin: 30px;
+}
+
 /* header */
 
 header {
@@ -45,24 +53,41 @@ header ul li {
   margin-right: 50px;
 }
 
-.img-before {
-  
+
+.img-container {
+  position: absolute;
+  right: 200px;
+  top: 100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  overflow: hidden;
 }
-.img-after {
-  display: none;
 
+img {
+  min-width: 100%;
+  min-height: 100%;
+  transition: all 0.5s linear
 }
 
-.img-before:hover {
-  display:none;
+img.img-after {
+  position: absolute;
+  height: 300px;
+  width: 50px;
+  opacity: 0;
 }
 
-.img-before:hover + .img-after {
-  display: block;
+.img-container:hover img.img-before{
+  opacity: 0;
 }
 
-
-
+.img-container:hover img.img-after{
+  opacity: 1;
+}
 
 /* body */
 body {
@@ -70,16 +95,14 @@ body {
   top: 90px;
 }
 
+
 .content p{
   max-width: 60%;
   text-align: justify;
   font-size: 18px;
 }
 
-img {
-  float: right;
-  margin-right: 30px;
-}
+
 .skills {
   font-size: 20px;
   font-weight: bold;
@@ -100,6 +123,5 @@ img {
   background-color: HSL(8,40%,40%);
   color: white;
   padding: 5px;
- margin-left: 20px;
 
 }
